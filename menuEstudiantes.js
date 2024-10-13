@@ -1,18 +1,10 @@
-const prompt = require ("prompt-sync")();
-
-const alumnos = [];
-const materias = [];
-const profesores = [];
-const notas = [];
-const cursos = [
-    {
-        nombreCurso: "auto",
-        materias: ["matematicas","historia"],
-        profesor: "jorge rodriguez",
-        alumnos: [],
-    }     
-];
-        
+//const prompt = require ("prompt-sync")();
+import prompt_sync from 'prompt-sync';
+const prompt = prompt_sync();
+import { alumnos, materias,profesores,notas,cursos } from "./buscarAlumno.js";
+import {  agregarAlumno }from "./buscarAlumno.js";
+import { eliminarAlumno }from "./buscarAlumno.js";
+ 
       
 const maximoAlumnosPorClase = 5
 
@@ -39,8 +31,10 @@ console.log(" ----------- ")
 
 switch (opcion) {
     case "1":
-    agregarAlumno();
-    break;
+      const nombre = prompt("Ingrese nombre del alumno: ");
+      const apellido = prompt("Ingrese apellido del alumno: ");
+      agregarAlumno( nombre, apellido );
+      break;
     case "2":
     eliminarAlumno();
     break;
@@ -77,33 +71,6 @@ switch (opcion) {
 }
 
 menu();
-
-}
-
-function agregarAlumno() {
-    const nombre = prompt("Ingrese nombre del alumno: ");
-    const apellido = prompt("Ingrese apellido del alumno: ");
-    alumnos.push ({nombre, apellido}) ;
-    console.log(" ----------- ")
-    console.log("Alumno agregado con éxito");
-    console.log(" ----------- ")
-  }
-  
-function eliminarAlumno() {
-    const nombreAEliminar = prompt("Ingrese nombre del alumno: ");
-    const apellidoAEliminar = prompt("Ingrese apellido del alumno: ");
-    const indiceAEliminar = alumnos.findIndex( a => a.nombre == nombreAEliminar && a.apellido == apellidoAEliminar );
-    if( indiceAEliminar == -1 ){
-        console.log(" ----------- ")
-        console.log(" El alumno no exite. ")
-        console.log(" ----------- ")
-    } else {
-        alumnos.splice( indiceAEliminar, 1 );
-        console.log(" ----------- ")
-        console.log("se elimino")
-        console.log(" ----------- ")
-    }
-}
 
   function agregarMateria() {
     const nombre = prompt("Ingrese nombre de la materia: ");
@@ -167,7 +134,6 @@ function eliminarAlumno() {
     const nombre = prompt("Ingrese nombre del alumno: ");
     const apellido = prompt("Ingrese apellido del alumno: ");
     const cursoAsignado = prompt("introduce el nombre del curso ");
-    console.log("hola");
      let curso = cursos.find(c => c.nombreCurso === cursoAsignado);
       
       if (curso) {
@@ -188,7 +154,6 @@ function eliminarAlumno() {
         console.log(`Curso ${cursoAsignado} no encontrado.`);
       }
     }
-    
-   menu()
      
- 
+  } 
+  menu();
