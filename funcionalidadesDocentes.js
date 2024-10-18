@@ -1,0 +1,1 @@
+import {estudiantes, carreras} from "./arreglos.js"
