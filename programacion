@@ -1,0 +1,57 @@
+menu(){
+ opcion A estudiante //una funcion que busque el dni del estudiante en array estudiantes, si esta le muestra el menu estudiante, si no
+ esta console.log no se encuentra inscripto ---crearse un
+ menuEstudiante()
+ opcion B docente
+ menuDocente()
+ //opcion administrativo
+ 
+ 
+ 
+ 
+ menuEstudiante
+ anotarse en una carrera
+ anotarse en un curso (arreglo carrera, materia.alumno.push)
+ verMaterias en las que esta inscripto()
+ verlasNotas()
+ ver notas materia
+ si curso.alumnos.lenght es menor que maximoalumnosporclase entonces
+   push
+   sino
+   console.log no se puede matricular, supera el maximo de alumnos inscritos
+  verCarrerasDisponibles()
+ eliminarAlumnodeCurso//en caso que el alumno quiera cursar la materia
+ BajaEstudiante// eliminamos estudiante del arreglo estudiante
+ 
+ Docente id: 1
+ menuDocente
+ modificarCapacidad
+ subirNotaAlumno
+ VerPromedioDelCurso (curso,alumno)
+ ------------------------------------------------------
+ main, funcionesEstudiantes, funcionesDocente, arreglos
+ 
+ const estudiantes= [estudiante1, estudiante2, estudiante3];
+ const estudiante1={
+    id:1,
+    nombre: "Juan Perez ",
+    fechaNacimiento: "00-00-0000",
+    email: "juan@",
+    domicilio: "ffff"
+}
+
+
+const carreras= [tecda,inicial,especial,primaria,bibliotecologia];
+const tecda = {
+   name: "Tecda",
+   estudiantes: [{id:1}],
+ 
+   materias: [{
+       nombre: "EDI 1",
+       profesor: "Gisele Keimel",
+       capacidad: 4,
+       estudiantes: [
+          {id:1, calificaciones: []}
+       ]
+   }
+   
