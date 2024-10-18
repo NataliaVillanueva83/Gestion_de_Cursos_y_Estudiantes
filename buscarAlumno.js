@@ -1,9 +1,7 @@
 
 import prompt_sync from 'prompt-sync';
 const prompt = prompt_sync();
-export { alumnos, materias,profesores,notas,cursos }
-export { agregarAlumno, }
-export{ eliminarAlumno }
+
 
 
 const alumnos = [];
@@ -41,3 +39,6 @@ function eliminarAlumno() {
         console.log(" ----------- ")
     }
 }
+
+
+export { alumnos, materias,profesores,notas,cursos, agregarAlumno, eliminarAlumno }
