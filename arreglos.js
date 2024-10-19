@@ -1,41 +1,41 @@
 const estudiantes=[
     {
-        id: 11111111,
+        id: 1,
         nombre: "Juan Pablo Perez",
         fechaNacimiento: "12/11/2000",
         domicilio: "Rodriguez 445",
         email: "perezjuan@gmail.com"    
     },
 {
-    id: 22222222,
+    id: 2,
     nombre: "Maria Ana Martinez",
     fechaNacimiento: "2/08/2000",
     domicilio: "Av. Luis Miguel de la Madrid 345",
     email: "martinamaria@gmail.com"
 },
 {
-    id: 33333333,
+    id: 3,
     nombre: "Pedro Pablo Rodriguez",
     fechaNacimiento: "15/05/1995",
     domicilio: "Av. España 567",
     email: "rodriguezpedro@gmail.com"
 },
 {
-    id: 44444444,
+    id: 4,
     nombre: "Lucia Martinez Garcia",
     fechaNacimiento: "10/02/1998",
     domicilio: "Calle Oscar Arroyo 234",
     email: "garcialucia@gmail.com"
 },
 {
-    id: 55555555,
+    id: 5,
     nombre: "Jose Maria Garcia",
     fechaNacimiento: "25/10/1993",
     domicilio: "Paseo de la Castellana 678",
     email: "garciajose@gmail.com"
 },
 {
-    id: 66666666,
+    id: 6,
     nombre: "Ana Maria Gonzalez",
     fechaNacimiento: "08/09/1991",
     domicilio: "Av. Flores 789",
@@ -43,11 +43,13 @@ const estudiantes=[
 }
 ];
 
-const carreras= [tecda];
-
-const tecda= {
+const carreras = [
+    {
+        
     nombre: "Tecda",
+
     estudiantes: [], //solo agregamos id de estudiante para saber que esta inscripto en la carrera
+
     materias: [ {
             nombre: "EDI I",
             profesor: "Giselle Keimel",
@@ -249,6 +251,87 @@ const tecda= {
             ]
         }
     ]
-}
+    }
 
-export {estudiantes, carreras}
+    ]
+
+
+const profesores = [
+    {
+        id: 21,
+        nombre: "Silvina Gonzalez Formaini",
+        
+    },
+    {
+        id: 31,
+        nombre:  "profesor Juan Toloza",
+        
+    },
+    {
+        id: 41,
+        nombre: "profesor Lucas Salvatori",
+       
+    },
+    {
+        id: 51,
+       nombre: "profesor Jorge Bruno",
+        
+    },
+    {
+        id: 61,
+        nombre: "profesoraa Mercedes Moreno",
+        
+    },
+    {
+        id: 71,
+       nombre: "profesor Jose Meana",
+        
+    },
+    {
+        id: 81,
+        nombre: "profesora Fanny Florin",
+        
+    },
+    {
+        id: 91,
+        nombre: "profesor juan perez",
+        
+    },
+    {
+        id: 101,
+       nombre: "profesor felipe santos",
+        
+    },
+    {
+        id: 102,
+       nombre: "profesora Silvina Gonzalez Formaini",
+        
+    },
+    {
+        id: 103,
+       nombre: "profesora josefa ruta",
+        
+    },
+    {
+        id: 104 ,
+        nombre: "profesor Lucas Salvator",
+        
+    },
+]
+
+const administrativos = [
+    {
+
+    id: 201,
+    nombre: "erika rivas",
+},
+{
+    id: 202,
+    nombre: "teresa retondo",
+
+
+},
+]
+
+
+export {estudiantes,profesores, carreras}
