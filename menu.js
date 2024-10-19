@@ -1,6 +1,3 @@
-// Función para mostrar el menú principal
-
-//const prompt = require ("prompt-sync")();
 import prompt_sync from 'prompt-sync';
 const prompt = prompt_sync();
 import {mostrarMenu ,mostrarMenuEstudiantes } from "./funcionesEstud.js";
