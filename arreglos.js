@@ -1,41 +1,41 @@
 const estudiantes=[
     {
-        id: 1,
+        id: 1000,
         nombre: "Juan Pablo Perez",
         fechaNacimiento: "12/11/2000",
         domicilio: "Rodriguez 445",
         email: "perezjuan@gmail.com"    
     },
 {
-    id: 2,
+    id: 1001,
     nombre: "Maria Ana Martinez",
     fechaNacimiento: "2/08/2000",
     domicilio: "Av. Luis Miguel de la Madrid 345",
     email: "martinamaria@gmail.com"
 },
 {
-    id: 3,
+    id: 1002,
     nombre: "Pedro Pablo Rodriguez",
     fechaNacimiento: "15/05/1995",
     domicilio: "Av. España 567",
     email: "rodriguezpedro@gmail.com"
 },
 {
-    id: 4,
+    id: 1003,
     nombre: "Lucia Martinez Garcia",
     fechaNacimiento: "10/02/1998",
     domicilio: "Calle Oscar Arroyo 234",
     email: "garcialucia@gmail.com"
 },
 {
-    id: 5,
+    id: 1004,
     nombre: "Jose Maria Garcia",
     fechaNacimiento: "25/10/1993",
     domicilio: "Paseo de la Castellana 678",
     email: "garciajose@gmail.com"
 },
 {
-    id: 6,
+    id: 1005,
     nombre: "Ana Maria Gonzalez",
     fechaNacimiento: "08/09/1991",
     domicilio: "Av. Flores 789",
@@ -43,20 +43,11 @@ const estudiantes=[
 }
 ];
 
-const carreras = [
-    {
-        
-    nombre: "Tecda",
-
-    estudiantes: [], //solo agregamos id de estudiante para saber que esta inscripto en la carrera
-
-    materias: [ {
+    const cursos= [ {
             nombre: "EDI I",
             profesor: "Giselle Keimel",
             capacidad: 20,
-            estudiantes: [
-                //{id: 22222222, calificaciones:[]}
-            ]
+            estudiantes: []
         },
         {
             nombre: "Ingles tecnico I",
@@ -251,9 +242,6 @@ const carreras = [
             ]
         }
     ]
-    }
-
-    ]
 
 
 const profesores = [
@@ -334,4 +322,4 @@ const administrativos = [
 ]
 
 
-export {estudiantes,profesores, carreras}
+export {estudiantes,profesores, cursos,administrativos}

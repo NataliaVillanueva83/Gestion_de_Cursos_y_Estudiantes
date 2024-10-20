@@ -1,15 +1,18 @@
 import prompt_sync from 'prompt-sync';
 const prompt = prompt_sync();
 
-import { mostrarMenuEstudiantes ,verCarreras,inscribirseEncarrera,} from "./funcionesEstud.js";
-import {estudiantes,profesores} from "./arreglos.js"
-import { mostrarMenuProfesores, verHorarios, calificarEstudiante, verEstudianteEnCarrera } from './funcionesProf.js';
+import { mostrarMenuEstudiantes ,verCarreras,inscribirseEncarrera as inscribirseEnCurso,verNotas} from "./funcionesEstud.js";
+import {estudiantes,profesores,administrativos} from "./arreglos.js"
+import { mostrarMenuProfesores, verHorarios, calificarEstudiante, verEstudianteEnCarrera, verPromedioGeneralPorCurso, 
+  verPromedioPorEstudiantePorCurso
+ } from './funcionesProf.js';
+ import {  mostrarMenuAdministrativos,eliminarAlumno ,verReportes  } from "./administrativos.js"
 
 
 let id = parseInt(prompt("INTRODUCE TU ID: "));
-let nameId =estudiantes.find(estudiante=> estudiante.id === id) ||
+let nameId = estudiantes.find(estudiante=> estudiante.id === id) ||
 profesores.find(profesor => profesor.id === id) ||
-administrativos.find(administrativo => administrativo.id === name.id);
+administrativos.find(administrativo => administrativo.id === id);
 
 if (nameId) {
   console.log(`El nombre de la persona con ID ${id} es ${nameId.nombre}`);
@@ -27,13 +30,6 @@ function mostrarMenu() {
   console.log("4. Salir");
 }
 
-function mostrarMenuAdministrativos() {
-  console.log("\nMenú para Administrativos:");
-  console.log("1. Ver reportes");
-  console.log("2. Gestionar recursos");
-  console.log("3. Volver al menú principal");
-}
-
 
 function manejarEleccion(opcion, id) {
   switch (opcion) {
@@ -43,7 +39,7 @@ function manejarEleccion(opcion, id) {
       manejarSubmenu(mostrarMenuEstudiantes, id, manejarOpcionSubmenuEstudiante );
       break;
     case 2:
-      if(id > 20)
+      if(id > 0 && id < 200)
         console.log(`\nIngresaste como Profesor con ID: ${id}`);
       else 
         console.log("no puedes usar esta opcion");
@@ -51,7 +47,7 @@ function manejarEleccion(opcion, id) {
       break;
     case 3:
       console.log(`\nIngresaste como Administrativo con ID: ${id}`);
-      manejarSubmenu(mostrarMenuAdministrativos, id);
+      manejarSubmenu(mostrarMenuAdministrativos, id, manejarOpcionSubmenuAdministrativo);
       break;
     case 4:
       console.log("\nHVolviendo al menu anterior.");
@@ -76,22 +72,20 @@ function manejarOpcionSubmenuEstudiante(opcionSubmenu, id) {
       verCarreras();
       return false; 
     case 2:
-      inscribirseEncarrera( id );
-      return false; // Continuar en el submenú
+      inscribirseEnCurso( id );
+      return false; 
     case 3:
-      console.log("Ver notas...");
-      return false; // Continuar en el submenú
+      verNotas(id);
+      return false; 
     case 4:
-      console.log("Ver notas de materia...");
-      return false; // Continuar en el submenú
-    case 5:
       console.log("\nVolviendo al menú principal");
-      return true; // Volver al menú principal
+      return true; 
     default:
       console.log("\nOpción no válida, introduce una opción válida");
       return false; // Opción no válida, continuar el bucle del submenú
   }
 }
+
 
 function manejarOpcionSubmenuProfesor(opcionSubmenu, id) {
   switch (opcionSubmenu) {
@@ -105,8 +99,31 @@ function manejarOpcionSubmenuProfesor(opcionSubmenu, id) {
       verEstudianteEnCarrera();
       return false; // Continuar en el submenú
     case 4:
+      verPromedioGeneralPorCurso();
+      return false; // Volver al menú principal
+    case 5:
+      verPromedioPorEstudiantePorCurso();
+      return false; // Volver al menú principal
+    case 6:
       console.log("\nVolviendo al menú principal");
       return true; // Volver al menú principal
+    default:
+      console.log("\nOpción no válida, introduce una opción válida");
+      return false; // Opción no válida, continuar el bucle del submenú
+  }
+}
+
+function manejarOpcionSubmenuAdministrativo(opcionSubmenu, id) {
+  switch (opcionSubmenu) {
+    case 1:
+      verReportes();
+      return false; 
+    case 2:
+      eliminarAlumno( );
+      return false; 
+    case 3:
+      console.log("\nVolviendo al menú principal");
+      return true; 
     default:
       console.log("\nOpción no válida, introduce una opción válida");
       return false; // Opción no válida, continuar el bucle del submenú

@@ -1,5 +1,5 @@
 import prompt_sync from 'prompt-sync';
-import {carreras} from "./arreglos.js"
+import {cursos} from "./arreglos.js"
 const prompt = prompt_sync();
 
 function mostrarMenu() {
@@ -13,28 +13,50 @@ function mostrarMenu() {
 function mostrarMenuEstudiantes() {
     console.log("\nMenú para Estudiantes:");
     console.log("1. Ver cursos");
-    console.log("2. Inscribirse en carrera");
-    console.log("3. Ver notas");
-    console.log("4. Ver notas por materia");
-    console.log("5. Volver al menú principal");
+    console.log("2. Inscribirse en curso");
+    console.log("3. Ver notas por curso");
+    console.log("4. Volver al menú principal");
 }
 
-function verCarreras() {
-    console.log("\nLista de carreras disponibles: ");
-    console.log("\ntecda");
-    console.log("\ninicial");
-    console.log("\nanalisis de sistemas");
-    console.log("\nbibliotecario");
-    
-}
+function verCursos() {
+    console.log("\nLista de cursos disponibles: ");
+    cursos.forEach(element => {
+            console.log(element.nombre);
+        });
+        
+    }
 
-  function inscribirseEncarrera( idAlumno ) {
-    let nombreCarrera = prompt("Introduce el nombre de la carrera en la que deseas inscribirte: ");
-    let carrera = carreras.find( c => c.nombre === nombreCarrera );
-    if( carrera != undefined )
-        carrera.estudiantes.push( idAlumno );
-    else
-        console.log( "La carrera elegida no existe." )
+  function inscribirseEnCurso( idAlumno ) {
+    let nombreCurso = prompt("Introduce el nombre del curso en la que deseas inscribirte: ");
+    let curso = cursos.find( c => c.nombre.toUpperCase() === nombreCurso.toUpperCase() );
+    if( curso != undefined ){
+        if( true ){
+            if ( curso.estudiantes.length < curso.capacidad ){
+                curso.estudiantes.push( { id:idAlumno, calificaciones:[] } );
+                console.log( `Se inscribio con exito. Curso: ${ curso.nombre }.`) 
+                curso.estudiantes.forEach( e => console.log( `- Estudiante con ID: ${e.id}` ) )
+            } 
+            else
+                console.log( "El curso elegido supero la capacidad maxima." )
+        }
+    }else
+        console.log( "El curso elegido no existe." )
 }
   
-export {  mostrarMenuEstudiantes,verCarreras,inscribirseEncarrera,mostrarMenu }
+
+
+function verNotas(idAlumno){
+    cursos.forEach(c => {
+        c.estudiantes.forEach(e =>{
+            if(idAlumno == e.id){
+                console.log(`Curso: ${c.nombre}. Notas: ${e.calificaciones}`);
+                
+            }
+        })
+    })
+
+
+}
+
+
+export {  mostrarMenuEstudiantes,verCursos as verCarreras,inscribirseEnCurso as inscribirseEncarrera,mostrarMenu,verNotas }
