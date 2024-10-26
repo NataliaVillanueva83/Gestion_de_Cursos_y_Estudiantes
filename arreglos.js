@@ -1,307 +1,137 @@
 const estudiantes=[
     {
-        id: 1000,
+        id: 1,
         nombre: "Juan Pablo Perez",
         fechaNacimiento: "12/11/2000",
         domicilio: "Rodriguez 445",
         email: "perezjuan@gmail.com"    
     },
 {
-    id: 1001,
+    id: 2,
     nombre: "Maria Ana Martinez",
     fechaNacimiento: "2/08/2000",
     domicilio: "Av. Luis Miguel de la Madrid 345",
     email: "martinamaria@gmail.com"
 },
 {
-    id: 1002,
+    id: 3,
     nombre: "Pedro Pablo Rodriguez",
     fechaNacimiento: "15/05/1995",
     domicilio: "Av. España 567",
     email: "rodriguezpedro@gmail.com"
 },
 {
-    id: 1003,
+    id: 4,
     nombre: "Lucia Martinez Garcia",
     fechaNacimiento: "10/02/1998",
     domicilio: "Calle Oscar Arroyo 234",
     email: "garcialucia@gmail.com"
 },
 {
-    id: 1004,
+    id: 5,
     nombre: "Jose Maria Garcia",
     fechaNacimiento: "25/10/1993",
     domicilio: "Paseo de la Castellana 678",
     email: "garciajose@gmail.com"
 },
 {
-    id: 1005,
+    id: 6,
     nombre: "Ana Maria Gonzalez",
     fechaNacimiento: "08/09/1991",
     domicilio: "Av. Flores 789",
     email: "gonzalezana@gmail.com"
 }
 ];
+const carreras = [
 
-    const cursos= [ {
-            nombre: "EDI I",
-            profesor: "Giselle Keimel",
-            capacidad: 20,
-            estudiantes: []
-        },
-        {
-            nombre: "Ingles tecnico I",
-            profesor: "Silvina Gonzalez Formaini",
-            capacidad: 20,
-            estudiantes: [
-                //{id: 22222222, calificaciones:[]}
-            ]
-        },
-        {
-            nombre: "Sistemas de computacion",
-            profesor: "Juan Toloza",
-            capacidad: 20,
-            estudiantes: [
-                //{id: 22222222, calificaciones:[]}
-            ]
-        },
-        {
-            nombre: "Programacion",
-            profesor: "Lucas Salvatori",
-            capacidad: 20,
-            estudiantes: [
-                //{id: 22222222, calificaciones:[]}
-            ]
-        },
-        {
-            nombre: "Analisis Matematico I",
-            profesor: "Jorge Bruno",
-            capacidad: 20,
-            estudiantes: [
-                //{id: 22222222, calificaciones:[]}
-            ]
-        },
-        {
-            nombre: "Administracion de las Organizaciones",
-            profesor: "Mercedes Moreno",
-            capacidad: 20,
-            estudiantes: [
-                //{id: 22222222, calificaciones:[]}
-            ]
-        },
-        {
-            nombre: "Algebra",
-            profesor: "Jose Meana",
-            capacidad: 20,
-            estudiantes: [
-                //{id: 22222222, calificaciones:[]}
-            ]
-        },
-        {
-            nombre: "Metodologia de la investigacion",
-            profesor: "Fanny Florin",
-            capacidad: 20,
-            estudiantes: [
-                //{id: 22222222, calificaciones:[]}
-            ]
-        },
-        {
-            nombre: "Probabilidad y estadistica",
-            profesor: "Jose Meana",
-            capacidad: 20,
-            estudiantes: [
-                //{id: 22222222, calificaciones:[]}
-            ]
-        },
-        {
-            nombre: "Analisis Matematico II",
-            profesor: "Jose Meana",
-            capacidad: 20,
-            estudiantes: [
-                //{id: 22222222, calificaciones:[]}
-            ]
-        },
-        {
-            nombre: "Ingles tecnico II",
-            profesor: "Silvina Gonzalez Formaini",
-            capacidad: 20,
-            estudiantes: [
-                //{id: 22222222, calificaciones:[]}
-            ]
-        },
-        {
-            nombre: "EDI II",
-            profesor: "Giselle Keimel",
-            capacidad: 20,
-            estudiantes: [
-                //{id: 22222222, calificaciones:[]}
-            ]
-        },
-        {
-            nombre: "Sistemas Operativos",
-            profesor: "Lucas Salvatori",
-            capacidad: 20,
-            estudiantes: [
-                //{id: 22222222, calificaciones:[]}
-            ]
-        },
-        {
-            nombre: "Base de Datos",
-            profesor: "sin asignar",
-            capacidad: 20,
-            estudiantes: [
-                //{id: 22222222, calificaciones:[]}
-            ]
-        },
-        {
-            nombre: "Analisis de Sistemas",
-            profesor: "sin asignar",
-            capacidad: 20,
-            estudiantes: [
-                //{id: 22222222, calificaciones:[]}
-            ]
-        },
-        {
-            nombre: "Programacion Orientada a Objetos",
-            profesor: "sin asignar",
-            capacidad: 20,
-            estudiantes: [
-                //{id: 22222222, calificaciones:[]}
-            ]
-        },
-        {
-            nombre: "Base de Datos",
-            profesor: "sin asignar",
-            capacidad: 20,
-            estudiantes: [
-                //{id: 22222222, calificaciones:[]}
-            ]
-        },
-        {
-            nombre: "Seminario de Programacion",
-            profesor: "sin asignar",
-            capacidad: 20,
-            estudiantes: [
-                //{id: 22222222, calificaciones:[]}
-            ]
-        },
-        {
-            nombre: "Investigacion Operativa",
-            profesor: "sin asignar",
-            capacidad: 20,
-            estudiantes: [
-                //{id: 22222222, calificaciones:[]}
-            ]
-        },
-        {
-            nombre: "Economia Empresarial",
-            profesor: "sin asignar",
-            capacidad: 20,
-            estudiantes: [
-                //{id: 22222222, calificaciones:[]}
-            ]
-        },
-        {
-            nombre: "Teleinformatica",
-            profesor: "sin asignar",
-            capacidad: 20,
-            estudiantes: [
-                //{id: 22222222, calificaciones:[]}
-            ]
-        },
-        {
-            nombre: "Practica Profesional",
-            profesor: "sin asignar",
-            capacidad: 20,
-            estudiantes: [
-                //{id: 22222222, calificaciones:[]}
-            ]
-        },
-        {
-            nombre: "Diseño e Implementacion de Sistemas",
-            profesor: "sin asignar",
-            capacidad: 20,
-            estudiantes: [
-                //{id: 22222222, calificaciones:[]}
-            ]
-        },
-        {
-            nombre: "Gestion de Base de Datos",
-            profesor: "sin asignar",
-            capacidad: 20,
-            estudiantes: [
-                //{id: 22222222, calificaciones:[]}
-            ]
-        },
-        {
-            nombre: "EDI III",
-            profesor: "sin asignar",
-            capacidad: 20,
-            estudiantes: [
-                //{id: 22222222, calificaciones:[]}
-            ]
-        }
-    ]
+
+    { nombre: "Tecda", capacidad: 20, cursos:[] },  
+    { nombre: "Desarrollo Web", capacidad: 20, cursos:[] },   
+    { nombre: "Diseño Gráfico", capacidad: 20, cursos:[] },
+    { nombre: "Programación Básica", capacidad: 20, cursos:[] },
+
+    ]      
+ const cursos = [
+
+ { nombre: "EDI", profesor: "Giselle Keimel", capacidad: 20, estudiantes: [] },
+ { nombre: "Ingles", profesor: "Silvina Gonzalez Formaini", capacidad: 20, estudiantes: [] },
+ { nombre: "Sistemas de computacion", profesor: "Juan Toloza", capacidad: 20, estudiantes: [] },
+ { nombre: "Programacion", profesor: "Lucas Salvatori", capacidad: 20, estudiantes: [] },
+ { nombre: "Analisis Matematico", profesor: "Jorge Bruno", capacidad: 20, estudiantes: [] },
+ { nombre: "Administracion de las Organizaciones", profesor: "Mercedes Moreno", capacidad: 20, estudiantes: [] },
+ { nombre: "Algebra", profesor: "Jose Meana", capacidad: 20, estudiantes: [] },
+ { nombre: "Metodologia de la investigacion", profesor: "Fanny Florin", capacidad: 20, estudiantes: [] },
+ { nombre: "Probabilidad y estadistica", profesor: "Jose Meana", capacidad: 20, estudiantes: [] },
+ { nombre: "EDI", profesor: "Giselle Keimel", capacidad: 20, estudiantes: [] },
+ { nombre: "Ingles", profesor: "Silvina Gonzalez Formaini", capacidad: 20, estudiantes: [] },
+ { nombre: "Sistemas de computacion", profesor: "Juan Toloza", capacidad: 20, estudiantes: [] },
+ { nombre: "Programacion", profesor: "Lucas Salvatori", capacidad: 20, estudiantes: [] },
+ { nombre: "Analisis Matematico", profesor: "Jorge Bruno", capacidad: 20, estudiantes: [] },
+ { nombre: "Administracion de las Organizaciones", profesor: "Mercedes Moreno", capacidad: 20, estudiantes: [] },
+ { nombre: "Algebra", profesor: "Jose Meana", capacidad: 20, estudiantes: [] }
+
+ ]
+
 
 
 const profesores = [
     {
-        id: 21,
+        id: 1000,
         nombre: "Silvina Gonzalez Formaini",
         
     },
     {
-        id: 31,
+        id: 1001,
         nombre:  "profesor Juan Toloza",
         
     },
     {
-        id: 41,
+        id: 1002,
         nombre: "profesor Lucas Salvatori",
        
     },
     {
-        id: 51,
+        id: 1003,
        nombre: "profesor Jorge Bruno",
         
     },
     {
-        id: 61,
+        id: 1004,
         nombre: "profesoraa Mercedes Moreno",
         
     },
     {
-        id: 71,
+        id: 1005,
        nombre: "profesor Jose Meana",
         
     },
     {
-        id: 81,
+        id: 1006,
         nombre: "profesora Fanny Florin",
         
     },
     {
-        id: 91,
+        id: 1007,
         nombre: "profesor juan perez",
         
     },
     {
-        id: 101,
+        id: 1008,
        nombre: "profesor felipe santos",
         
     },
     {
-        id: 102,
+        id: 1009,
        nombre: "profesora Silvina Gonzalez Formaini",
         
     },
     {
-        id: 103,
+        id: 1010,
        nombre: "profesora josefa ruta",
         
     },
     {
-        id: 104 ,
+        id: 10114 ,
         nombre: "profesor Lucas Salvator",
         
     },
@@ -322,4 +152,4 @@ const administrativos = [
 ]
 
 
-export {estudiantes,profesores, cursos,administrativos}
+export {estudiantes,profesores,cursos,carreras,administrativos}

@@ -1,13 +1,17 @@
 import prompt_sync from 'prompt-sync';
 import {cursos} from "./arreglos.js"
+
 const prompt = prompt_sync();
  
 function mostrarMenuAdministrativos() {
+    const opcionesAdministrativos = [
+      { Opción: 1, Descripción: "Ver reportes" },
+      { Opción: 2, Descripción: "Eliminar alumno" },
+      { Opción: 3, Descripción: "Volver al menú principal" }
+    ];
     console.log("\nMenú para Administrativos:");
-    console.log("1. Ver reportes");
-    console.log("2. Eliminar alumno");
-    console.log("3. Volver al menú principal");
-}
+    console.table(opcionesAdministrativos);
+}  
 
 function eliminarAlumno(){
     let idAlumno = prompt("Introduce el id del alumno a eliminar: ");

@@ -1,18 +1,21 @@
 import prompt_sync from 'prompt-sync';
+import { carreras,cursos } from './arreglos.js';
 const prompt = prompt_sync();
 
-import {cursos} from "./arreglos.js"
+
 
 function mostrarMenuProfesores() {
-    console.log("\nMenú para Profesores:");
-    console.log("1. Ver horarios");
-    console.log("2. Calificar estudiante ");
-    console.log("3. Ver estudiantes de una carrera");
-    console.log("4. Ver promedio general por curso");
-    console.log("5. Ver promedio de cada estudiante por curso");
-    console.log("6. Volver al menú principal");
-  }
-
+  const opcionesProfesores = [
+    { Opción: 1, Descripción: "Ver horarios" },
+    { Opción: 2, Descripción: "Calificar estudiantes" },
+    { Opción: 3, Descripción: "Ver estudiante en carrera" },
+    { Opción: 4, Descripción: "Ver promedio general por curso" },
+    { Opción: 5, Descripción: "Ver promedio por estudiante por curso" },
+    { Opción: 6, Descripción: "Volver al menú principal" }
+  ];
+  console.log("\nMenú para Profesores:");
+  console.table(opcionesProfesores);
+}
   function verPromedioGeneralPorCurso(){
     const nombreCurso = prompt("Introduce el nombre del curso: ");
     const curso = cursos.find( c => c.nombre.toLowerCase() === nombreCurso.toLowerCase() );
@@ -71,21 +74,21 @@ function calificarEstudiante(){
         console.log("El curso ingresado no existe.")
 }
 
-function verEstudianteEnCurso(){
-    let nombreCurso = prompt("Introduce el nombre del curso: ");
-    let curso = cursos.find( c => c.nombre.toUpperCase() === nombreCurso.toUpperCase() );
-    if( curso != undefined ){
-        console.log( `Estudiantes en el curso ${curso.nombre}` );
-        if( curso.estudiantes.length === 0 ){ 
-            console.log( `El curso no tiene estudiantes.` );
+function verEstudianteEnCarrera(){
+    let nombreCarrera = prompt("Introduce el nombre de la carrera: ");
+    let carrera = carreras.find( c => c.nombre.toUpperCase() === nombreCarrera.toUpperCase() );
+    if( carrera != undefined ){
+        console.log( `Estudiantes en el carrera ${carrera.nombre}` );
+        if( carrera.estudiantes.length === 0 ){ 
+            console.log( `El carrera no tiene estudiantes.` );
             return;
         }
-        curso.estudiantes.forEach( e => console.log( `Estudiante ID: ${e.id}, Calificaciones: ${e.calificaciones}` ) );
+        carrera.estudiantes.forEach( e => console.log( `Estudiante ID: ${e.id}, ` ) );
     }else{
-        console.log( `La curso no existe.` );
+        console.log( `La carrera no existe.` );
     }
 }
 
-export { mostrarMenuProfesores, verEstudianteEnCurso as verEstudianteEnCarrera, verHorarios, calificarEstudiante,
-    verPromedioGeneralPorCurso, verPromedioPorEstudiantePorCurso
- }
+
+export { mostrarMenuProfesores, verHorarios, calificarEstudiante,
+    verPromedioGeneralPorCurso, verPromedioPorEstudiantePorCurso,verEstudianteEnCarrera}
