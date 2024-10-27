@@ -140,11 +140,11 @@ const profesores = [
 const administrativos = [
     {
 
-    id: 201,
+    id: 2001,
     nombre: "erika rivas",
 },
 {
-    id: 202,
+    id: 2002,
     nombre: "teresa retondo",
 
 

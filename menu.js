@@ -5,7 +5,7 @@ import chalk from 'chalk';
 import { mostrarMenuEstudiantes, verCarreras, inscribirseEncarrera ,inscribirseEnCurso, verNotas, verCursos} from "./funcionesEstud.js";
 import { estudiantes, profesores, administrativos,carreras,cursos} from "./arreglos.js";
 import { mostrarMenuProfesores, verHorarios, calificarEstudiante, verEstudianteEnCarrera, verPromedioGeneralPorCurso, verPromedioPorEstudiantePorCurso } from './funcionesProf.js';
-import { mostrarMenuAdministrativos, eliminarAlumno, verReportes } from "./administrativos.js";
+import { mostrarMenuAdministrativos, eliminarEstudiante,buscarEstudianteporNombre, verReportes } from "./administrativos.js";
 
 function mostrarMenu() {
   const menu = [
@@ -21,11 +21,12 @@ function mostrarMenu() {
 function manejarEleccion(opcion, id) {
   switch (opcion) {
     case 1:
+      if (id > 0 && id < 999)
       console.log(chalk.red(`\nIngresaste como Estudiante con ID: ${id}`));
       manejarSubmenu(mostrarMenuEstudiantes, id, manejarOpcionSubmenuEstudiante);
       break;
     case 2:
-      if (id > 0 && id < 200) {
+      if (id > 999 ) {
         console.log(`\nIngresaste como Profesor con ID: ${id}`);
         manejarSubmenu(mostrarMenuProfesores, id, manejarOpcionSubmenuProfesor);
       } else {
@@ -33,8 +34,12 @@ function manejarEleccion(opcion, id) {
       }
       break;
     case 3:
+      if(id >2000){
       console.log(`\nIngresaste como Administrativo con ID: ${id}`);
       manejarSubmenu(mostrarMenuAdministrativos, id, manejarOpcionSubmenuAdministrativo);
+    } else {
+      console.log("No puedes usar esta opción");
+    }
       break;
     case 4:
       console.log("\nVolviendo al menú anterior.");
@@ -111,11 +116,19 @@ function manejarOpcionSubmenuAdministrativo(opcionSubmenu, id) {
       verReportes();
       return false;
     case 2:
-      eliminarAlumno();
+      eliminarEstudiante();
       return false;
     case 3:
+      buscarEstudianteporNombre()
+      console.log("\nbuscar alumno por nombre");
+      return false;
+      case 4:
+      console.log("\nfuncion sin asignar");
+      return false;
+      case 5:
       console.log("\nVolviendo al menú principal");
       return true;
+      
     default:
       console.log("\nOpción no válida, introduce una opción válida");
       return false;
